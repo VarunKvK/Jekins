@@ -1,21 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building the file'
-                bat 'javac HelloWorld.java'
-            }
-        }
-        stage('Test') {
+         stage('Test') {
             steps {
                 echo 'Testing'
             }
         }
+        stage('Deploy') {
+            steps {
+               publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'Html.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+            }
+        }
         stage('Run') {
             steps {
-                echo 'Running the file'
-                bat 'java HelloWorld.java'
+                echo 'Running successfully'
             }
         }
     }
