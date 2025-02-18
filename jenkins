@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Build World'
+                echo 'Building the file'
             }
         }
         stage('Test') {
             steps {
-                echo 'Test World'
+                echo 'Testing'
             }
         }
-        stage('Deploy') {
+        stage('Run') {
             steps {
-                echo 'Deploy World'
+                echo 'Running the file'
             }
         }
     }
